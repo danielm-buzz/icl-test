@@ -23,7 +23,7 @@
 //         sourceAction: new codepipeline_actions.S3SourceAction({
 //         actionName:"get-code",
 //         bucket:Bucket.fromBucketArn(this, "Bucket","arn:aws:s3:::cdkpipline-code"),
-//         bucketKey:'/good.zip',
+//         bucketKey:'good.zip',
 //         output:sourceArtifact
 //       }),
 
