@@ -1,12 +1,10 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
-import { CdkTestingStack } from '../lib/cdk_testing-stack';
-
-// import { CdkpipelinesDemoPipelineStack } from '../lib/cdkpipeline-test';
+import { CdkpipelinesDemoPipelineStack } from '../lib/cdkpipeline-test';
 const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
-new CdkTestingStack(app, 'CdkTestingStack', {env:envEU
+new CdkpipelinesDemoPipelineStack(app, 'CdkpipelinesDemoPipelineStack', {env:envEU
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */
@@ -21,4 +19,4 @@ new CdkTestingStack(app, 'CdkTestingStack', {env:envEU
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 });
-// app.synth();
+app.synth();
