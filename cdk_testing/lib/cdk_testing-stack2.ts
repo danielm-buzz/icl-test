@@ -7,7 +7,7 @@ import { env } from 'process';
 import { Queue } from '@aws-cdk/aws-sqs';
 
 
-export var name='sqsstack-'+env["projectName"] as string;
+export var name=env["projectName"] as string;
 // console.log(name,"stack num 2");
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
