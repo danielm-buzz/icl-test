@@ -6,8 +6,7 @@ import { RemovalPolicy } from 'aws-cdk-lib';
 import { env } from 'process';
 
 export var name=env["projectName"] as string;
-console.log(env["projectName"],"lkjk;l");
-if (name==undefined){throw new TypeError("no env var projectName")}
+// console.log(env["projectName"],"lkjk;l");
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
 export class CdkTestingStack extends Stack {

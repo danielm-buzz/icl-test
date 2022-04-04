@@ -2,23 +2,12 @@
 import 'source-map-support/register';
 import * as cdk from '@aws-cdk/core';
 import { CdkTestingStack, name } from '../lib/cdk_testing-stack';
+import { CdkTestingStacknum2,name as name2 } from '../lib/cdk_testing-stack2';
 
 // import { CdkpipelinesDemoPipelineStack } from '../lib/cdkpipeline-test';
 const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
-new CdkTestingStack(app, name, {env:envEU
-  /* If you don't specify 'env', this stack will be environment-agnostic.
-   * Account/Region-dependent features and context lookups will not work,
-   * but a single synthesized template can be deployed anywhere. */
-
-  /* Uncomment the next line to specialize this stack for the AWS Account
-   * and Region that are implied by the current CLI configuration. */
-  // env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-
-  /* Uncomment the next line if you know exactly what Account and Region you
-   * want to deploy the stack to. */
-  // env: { account: '123456789012', region: 'us-east-1' },
-
-  /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
-});
+new CdkTestingStack(app, name, {env:envEU});
+// console.log("CdkTestingStacknum2/"+name2)
+new CdkTestingStacknum2(app,name2,{env:envEU});
 // app.synth();
