@@ -1,20 +1,28 @@
-import {Construct, Stack, StackProps } from '@aws-cdk/core';
-// import { Construct } from 'constructs';
-// import { aws_s3 as s3 } from 'aws-cdk-lib';
+import {CfnParameter,Construct, Stack, StackProps } from '@aws-cdk/core';
 import { Bucket } from '@aws-cdk/aws-s3';
-import { RemovalPolicy } from 'aws-cdk-lib';
+import {  RemovalPolicy } from 'aws-cdk-lib';
 import { env } from 'process';
 
 export var name=env["projectName"] as string;
-// console.log(env["projectName"],"lkjk;l");
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+
 
 export class CdkTestingStack extends Stack {
+  
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const bucket = new Bucket(this, name,{
-      bucketName:name,
+
+
+    const name1 = new CfnParameter(this, 'name1', {
+      type: 'String',
+      description: 'Backet name',
+      default: "demo",
+      
+    });
+
+console.log(name1.valueAsString)
+    const bucket = new Bucket(this, "Backet",{
+      bucketName:name1.valueAsString,
       removalPolicy:RemovalPolicy.DESTROY
     });
 
