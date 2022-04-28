@@ -19,7 +19,6 @@ export class CdkTestingStacknum2 extends Stack {
     });
 
     const queue = new Queue(this, "TestQueue", {
-      queueName: name1.valueAsString
     });
 
   }

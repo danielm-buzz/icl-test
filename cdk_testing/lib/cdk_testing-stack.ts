@@ -20,9 +20,8 @@ export class CdkTestingStack extends Stack {
       
     });
 
-console.log(name1.valueAsString)
+// console.log(name1.valueAsString)
     const bucket = new Bucket(this, "Backet",{
-      bucketName:name1.valueAsString,
       removalPolicy:RemovalPolicy.DESTROY
     });
 
