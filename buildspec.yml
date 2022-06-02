@@ -30,7 +30,7 @@ phases:
       # name: version
     commands:
       - cd cdk_testing
-      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+      - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
       - apt-get update -y
       - npm update npm -g
       - npm install -g npm@latest
