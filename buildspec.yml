@@ -30,6 +30,7 @@ phases:
       # name: version
     commands:
       - cd cdk_testing
+      - apt update -y
       - npm update npm -g
       - npm install -g npm@latest
       - npm install
