@@ -15,7 +15,7 @@ const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
 const x= Buffer.from(params,'base64);
-let base64data = x.toString('ascii');
+const base64data = x.toString('ascii');
 
 console.log(base64data)
 const paramValue= JSON.parse(base64data);
