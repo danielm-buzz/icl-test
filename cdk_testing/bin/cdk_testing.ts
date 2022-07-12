@@ -14,7 +14,7 @@ const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
-const x= new Buffer.from(params);
+const x= Buffer.from(params);
 let base64data = x.toString('base64');
 
 console.log(base64data)
