@@ -12,6 +12,7 @@ const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
+console.log(atob(params))
 const paramValue= JSON.parse(params);
 arrStacks.push( new CdkTestingStack(app, "s3back-"+name, {env:envEU}))
 // console.log("CdkTestingStacknum2/"+name2)
