@@ -12,9 +12,9 @@ const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
-const decode = (params: string):string => Buffer.from(params, 'base64').toString('binary');
-console.log(decode)
-const paramValue= JSON.parse(decode);
+// const decode = (params: string):string => Buffer.from(params, 'base64').toString('binary');
+// console.log(decode)
+const paramValue= JSON.parse(params);
 arrStacks.push( new CdkTestingStack(app, "s3back-"+name, {env:envEU}))
 // console.log("CdkTestingStacknum2/"+name2)
 arrStacks.push( new CdkTestingStacknum2(app,"sqs-"+name,{env:envEU}))
