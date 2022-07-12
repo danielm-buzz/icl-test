@@ -4,6 +4,9 @@ import * as cdk from '@aws-cdk/core';
 import { CdkTestingStack} from '../lib/cdk_testing-stack';
 import { CdkTestingStacknum2} from '../lib/cdk_testing-stack2';
 import { env } from 'process';
+import { Base64 } from 'js-base64';
+
+
 const arrStacks = [];
 export var name=env["projectName"] as string;
 
@@ -13,8 +16,8 @@ const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
 // const decode = (params: string):string => Buffer.from(params, 'base64').toString('binary');
-// console.log(decode)
-const paramValue= JSON.parse(params);
+console.log(Base64.decode(params))
+const paramValue= JSON.parse(Base64.decode(params));
 arrStacks.push( new CdkTestingStack(app, "s3back-"+name, {env:envEU}))
 // console.log("CdkTestingStacknum2/"+name2)
 arrStacks.push( new CdkTestingStacknum2(app,"sqs-"+name,{env:envEU}))
