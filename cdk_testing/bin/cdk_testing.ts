@@ -4,7 +4,6 @@ import * as cdk from '@aws-cdk/core';
 import { CdkTestingStack} from '../lib/cdk_testing-stack';
 import { CdkTestingStacknum2} from '../lib/cdk_testing-stack2';
 import { env } from 'process';
-import { Base64 } from 'js-base64';
 
 
 const arrStacks = [];
@@ -15,8 +14,7 @@ const envEU  = { region: 'eu-west-1' };
 const app = new cdk.App();
 const params = app.node.tryGetContext("ctx1");
 console.log(params)
-// const decode = (params: string):string => Buffer.from(params, 'base64').toString('binary');
-const x= new Buffer(data);
+const x= new Buffer(params);
 let base64data = x.toString('base64');
 
 console.log(base64data)
